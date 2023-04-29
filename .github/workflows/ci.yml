@@ -17,13 +17,13 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    name: Node ${{ matrix.node }} & npm ${{ matrix.npm }}
+    name: Node ${{ matrix.node }} | npm ${{ matrix.npm }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        node: [ 16, 18, 20, latest ]
-        npm: [ 9, 8, 7, latest ]
+        node: [ 16, 18, 20 ]
+        npm: [ 9, 8, 7 ]
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
