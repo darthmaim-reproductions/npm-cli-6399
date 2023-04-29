@@ -17,6 +17,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    name: Node ${{ matrix.node }} & npm ${{ matrix.npm }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -25,7 +26,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@2.5.2
+      - uses: actions/setup-node@v2.5.2
         with:
           node-version: ${{ matrix.node }}
       - run: npm i -g npm@${{ matrix.node }}
