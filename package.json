@@ -1,6 +1,4 @@
 {
   "packageManager": "npm",
-  "scripts": {
-    "build": "exit 2" 
-  }
+  "workspaces": [ "test" ]
 }
