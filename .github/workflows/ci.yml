@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: [ 18, 20 ]
+        node: [ 16, 17, 18, 19, 20 ]
         npm: [ 9, 8 ]
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
