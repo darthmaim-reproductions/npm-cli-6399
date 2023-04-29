@@ -23,7 +23,7 @@ jobs:
       fail-fast: false
       matrix:
         node: [ 16, 17, 18, 19, 20 ]
-        npm: [ 7, 9, 8 ]
+        npm: [ 7, 8, 9 ]
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
