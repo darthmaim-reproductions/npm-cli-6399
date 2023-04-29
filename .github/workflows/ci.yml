@@ -18,9 +18,9 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     name: Node ${{ matrix.node }} & npm ${{ matrix.npm }}
-    if: always()
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         node: [ 16, 18, 20, latest ]
         npm: [ 9, 8, 7, latest ]
