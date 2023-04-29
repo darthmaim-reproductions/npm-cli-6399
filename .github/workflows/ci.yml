@@ -35,25 +35,3 @@ jobs:
       - run: |
           npm run build -w test
           echo $?
-          
-  turbo:
-    name: turbo > Node ${{ matrix.node }} | npm ${{ matrix.npm }}
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        node: [ 16, 18 ]
-        npm: [ 9, 8 ]
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2.5.2
-        with:
-          node-version: ${{ matrix.node }}
-      - run: npm i -g npm@${{ matrix.npm }} turbo@latest
-      - run: npm --version
-      - run: turbo --version
-      - run: |
-          turbo run build
-          echo $?
-      
